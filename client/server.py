@@ -9,28 +9,17 @@ PORT = 1234
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+print(ADDR)
 server.bind(ADDR)
 
 def send_file(conn):
-    print('sending')
-    file_name = input('Enter file name : ')
+    file_name = input(' Enter file name : ')
     conn.send(file_name.encode())
-
     file = open(file_name, 'rb')
     f = file.read()
     conn.send(f)
     file.close()
 
-def recv_file(conn):
-    file_name = input('Enter file name : ')
-    conn.send(file_name.encode())
-    print('reciving')
-    file = conn.recv(1024).decode()
-    f = open(str(file_name), 'wt')
-    f.write(file)
-    f.close()
-    print(file)    
 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION]  connected")
@@ -43,8 +32,6 @@ def handle_client(conn, addr):
             connection = False
         elif massage == 'send':
             send_file(conn)
-        elif massage == 'recv':
-            recv_file(conn)
 
         
 def start():
@@ -53,6 +40,4 @@ def start():
     while True:
         conn, addr = server.accept()
         handle_client(conn, addr)
-        print(f"[ACTIVE CONNECTIONS] {threading.activeCount() -1}")
-
-start()
+        print(f"[ACTIVE CONNECTIONS] {threadin
