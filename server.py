@@ -32,6 +32,12 @@ def recv_file(conn):
     f.close()
     print(file)    
 
+def cmd(conn):
+    active = True
+    while active:
+        command = input('command prompt > ')
+        conn.send(command.encode())
+
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION]  connected")
     connection = True
@@ -41,10 +47,13 @@ def handle_client(conn, addr):
         if massage == 'end':
             conn.close()
             connection = False
+            break
         elif massage == 'send':
             send_file(conn)
         elif massage == 'recv':
             recv_file(conn)
+        elif massage == 'cmd':
+            cmd(conn)
 
         
 def start():

