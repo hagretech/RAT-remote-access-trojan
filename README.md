@@ -5,15 +5,15 @@ A simple and handy tool for a hacker to gain remote access and control another c
 
 
 ## features
-** First clone the repo **
+**First clone the repo**
 ```
 git clone https://github.com/hagretech/RAT-remote-access-trojan.git
 ```
-** Change you dir **
+**Change you dir**
 ```
 cd RAT-remote-access-trojan
 ```
-** run the server.py and the client.py to the remote device  **
+**run the server.py and the client.py to the remote device**
 ```
 python3 server.py
 ```
