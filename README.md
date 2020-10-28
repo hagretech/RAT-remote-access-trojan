@@ -7,7 +7,7 @@ A simple and handy tool for a hacker to gain remote access and control another c
 ```
 git clone https://github.com/hagretech/RAT-remote-access-trojan.git
 ```
-**Change you dir**
+**Change your dir**
 ```
 cd RAT-remote-access-trojan
 ```
