@@ -3,8 +3,6 @@ A simple and handy tool for a hacker to gain remote access and control another c
 
 ## Installation
 
-
-## features
 **First clone the repo**
 ```
 git clone https://github.com/hagretech/RAT-remote-access-trojan.git
@@ -13,7 +11,11 @@ git clone https://github.com/hagretech/RAT-remote-access-trojan.git
 ```
 cd RAT-remote-access-trojan
 ```
+
 **run the server.py and the client.py to the remote device**
 ```
 python3 server.py
+
+## features
+
 ```
