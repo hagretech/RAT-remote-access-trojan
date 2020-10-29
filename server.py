@@ -71,7 +71,6 @@ def handle_client(conn, addr):
         elif massage == 'cmd':
             cmd(conn)
 
-
 # connection initalizing function      
 def start():
     server.listen(5)

@@ -47,6 +47,10 @@ def cmd():
             cd, di = command.split(' ')
             os.chdir(di) 
             b = 'changed'
+        # break the cmd functionality 
+        elif command == 'exit':
+            break
+        # all cmd commands are excuted  here 
         else:
             try :
                 b = os.system(command)
