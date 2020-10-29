@@ -41,6 +41,10 @@ def cmd(conn):
     while active:
         command = input('command prompt > ')
         conn.send(command.encode())
+        # checking if the command is exit and if so break the loop
+        if command == 'exit':
+            break
+        # classifying all the responses in to 0 and 1
         res = conn.recv(24).decode()
         if res == '0':
             print('success')
