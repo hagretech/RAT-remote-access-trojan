@@ -26,3 +26,9 @@ python3 server.py
   - and you are good to go :fire: :fire: !!
   
  ![conf img](https://github.com/hagretech/RAT-remote-access-trojan/blob/main/client%20ip%20conf%20.png?raw=true)
+
+## coming soon
+> send firefox and crome saved password and usernames 
+> built-in ransomware 
+> built-in phishing site
+> the virus will work in the Linux version 
