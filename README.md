@@ -29,6 +29,9 @@ python3 server.py
 
 ## coming soon
 > send firefox and crome saved password and usernames 
+
 > built-in ransomware 
+
 > built-in phishing site
+
 > the virus will work in the Linux version 
