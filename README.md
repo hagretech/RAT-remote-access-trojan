@@ -23,6 +23,6 @@ python3 server.py
 ## how to configure it 
   - get your public Ip address 
   - then insert your Ip in the ***server*** global variable "***Client.py***"
-  - and you are good to go :fire: :fire: !!(<-- two spaces)
+  - and you are good to go :fire: :fire: !!
   
  ![conf img](https://github.com/hagretech/RAT-remote-access-trojan/blob/main/client%20ip%20conf%20.png?raw=true)
