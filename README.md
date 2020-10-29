@@ -19,3 +19,9 @@ python3 server.py
 ## features
 
 ```
+
+## how to configure it 
+  - get your public Ip address 
+  - then insert your Ip in the Ip global variable "***Client.py***"
+  - and you are good to go :fire: :fire: !!
+ ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
