@@ -22,6 +22,6 @@ python3 server.py
 
 ## how to configure it 
   - get your public Ip address 
-  - then insert your Ip in the Ip global variable "***Client.py***"
+  - then insert your Ip in the ***server*** global variable "***Client.py***"
   - and you are good to go :fire: :fire: !!
- ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+ ![conf img](https://github.com/hagretech/RAT-remote-access-trojan/blob/main/client%20ip%20conf%20.png?raw=true)
